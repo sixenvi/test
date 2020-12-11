@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <style>
+    th, td{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:14;
+    }
+    </style>
+  <table>
+    <tr  >
+        <th>Name</th>
+        <th> |  Key   </th>
+        <th> | Link</th>
+    </tr>
+
+    <tbody id="mTable">
+        
+   </tbody>
+</table>
+<script>
+var jArr = {"results":[{"id":3047426,"key":"~admin","name":"Administrator","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~admin","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~admin"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/2654307"}},{"id":9273347,"key":"~b.k.fischer@dnb.de","name":"Barbara Katharina Fischer","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~b.k.fischer@dnb.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~b.k.fischer@dnb.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/8683636"}},{"id":28704772,"key":"~kellner-leidel@rbo.berlin","name":"Birgit Kellner-Leidel","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~kellner-leidel@rbo.berlin","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~kellner-leidel@rbo.berlin"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/27892420"}},{"id":21528588,"key":"~Christian.Diehr@office-consult.net","name":"Christian Diehr","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~Christian.Diehr@office-consult.net","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~Christian.Diehr@office-consult.net"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/20939298"}},{"id":26705930,"key":"~claudia.walther@sub.uni-goettingen.de","name":"Claudia Walther","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~claudia.walther@sub.uni-goettingen.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~claudia.walther@sub.uni-goettingen.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854920"}},{"id":23363586,"key":"CONF","name":"Confluence","type":"global","_links":{"webui":"/display/CONF","self":"https://confluencedemo42.atlasteam.de/rest/api/space/CONF"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/23429291"}},{"id":23363590,"key":"ATLCONF20","name":"Confluence Anwenderschulung","type":"global","_links":{"webui":"/display/ATLCONF20","self":"https://confluencedemo42.atlasteam.de/rest/api/space/ATLCONF20"},"_expandable":{"metadata":"","icon":"","description":""}},{"id":26705927,"key":"DINI","name":"Confluence-Schulung","type":"global","_links":{"webui":"/display/DINI","self":"https://confluencedemo42.atlasteam.de/rest/api/space/DINI"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854795"}},{"id":26705929,"key":"~daemmrich@leibniz-gemeinschaft.de","name":"Dämmrich","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~daemmrich@leibniz-gemeinschaft.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~daemmrich@leibniz-gemeinschaft.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854916"}},{"id":21528586,"key":"~Daniel.vonFromberg@spd.de","name":"Daniel von Fromberg","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~Daniel.vonFromberg@spd.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~Daniel.vonFromberg@spd.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/20939215"}},{"id":17661953,"key":"DOCU","name":"Dokumentation","type":"global","_links":{"webui":"/display/DOCU","self":"https://confluencedemo42.atlasteam.de/rest/api/space/DOCU"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/16023583"}},{"id":15466498,"key":"DOCS","name":"Dokumente","type":"global","_links":{"webui":"/display/DOCS","self":"https://confluencedemo42.atlasteam.de/rest/api/space/DOCS"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/15400967"}},{"id":26705922,"key":"JIRAANW","name":"Jira Anwenderschulung","type":"global","_links":{"webui":"/display/JIRAANW","self":"https://confluencedemo42.atlasteam.de/rest/api/space/JIRAANW"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854177"}},{"id":21528585,"key":"~Jochen.Wiemken@spd.de","name":"Jochen Wiemken","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~Jochen.Wiemken@spd.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~Jochen.Wiemken@spd.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/20939209"}},{"id":26705924,"key":"~ksaleh","name":"Kutaiba Saleh","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~ksaleh","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~ksaleh"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854429"}},{"id":26705926,"key":"~lpvogtmann","name":"LoAn Phan Vogtmann","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~lpvogtmann","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~lpvogtmann"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/25854528"}},{"id":21528584,"key":"~Marion.Vogel@spd.de","name":"Marion Vogel","type":"personal","_links":{"webui":"/spaces/viewspace.action?key=~Marion.Vogel@spd.de","self":"https://confluencedemo42.atlasteam.de/rest/api/space/~Marion.Vogel@spd.de"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/20939199"}},{"id":31555586,"key":"DEMOCASEPRODDIR","name":"Product Directory","type":"global","_links":{"webui":"/display/DEMOCASEPRODDIR","self":"https://confluencedemo42.atlasteam.de/rest/api/space/DEMOCASEPRODDIR"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/31195193"}},{"id":20283393,"key":"PRJA","name":"Projekt A","type":"global","_links":{"webui":"/display/PRJA","self":"https://confluencedemo42.atlasteam.de/rest/api/space/PRJA"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/19890185"}},{"id":7700482,"key":"SP","name":"Projekt Support","type":"global","_links":{"webui":"/display/SP","self":"https://confluencedemo42.atlasteam.de/rest/api/space/SP"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/7667729"}},{"id":20283394,"key":"PT","name":"Projekt Template","type":"global","_links":{"webui":"/display/PT","self":"https://confluencedemo42.atlasteam.de/rest/api/space/PT"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/19890191"}},{"id":3047425,"key":"PUB","name":"Publish","type":"global","_links":{"webui":"/display/PUB","self":"https://confluencedemo42.atlasteam.de/rest/api/space/PUB"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/2654398"}},{"id":31555585,"key":"QA","name":"QA","type":"global","_links":{"webui":"/display/QA","self":"https://confluencedemo42.atlasteam.de/rest/api/space/QA"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/31195152"}},{"id":31555587,"key":"QMSC","name":"QMS Com","type":"global","_links":{"webui":"/display/QMSC","self":"https://confluencedemo42.atlasteam.de/rest/api/space/QMSC"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/31195212"}},{"id":1769474,"key":"rwlayoutkey","name":"RefinedWiki Layout Space","type":"global","_links":{"webui":"/display/rwlayoutkey","self":"https://confluencedemo42.atlasteam.de/rest/api/space/rwlayoutkey"},"_expandable":{"metadata":"","icon":"","description":"","homepage":"/rest/api/content/1507337"}}],"start":0,"limit":25,"size":25,"_links":{"self":"https://confluencedemo42.atlasteam.de/rest/api/space/","next":"/rest/api/space/?limit=25&start=25","base":"https://confluencedemo42.atlasteam.de","context":""}};
+
+buildTable(jArr)
+
+function buildTable(data){
+  var table = document.getElementById('mTable')
+
+   for (var i=0; i < data.results.length; i++) {  
+ 
+       var row = `<tr>
+                <td> ${data.results[i].name}</td>
+                <td> ${" | " + data.results[i].key }</td>
+                <td> ${" | " + data.results[i]._links.self }</td>
+            </tr>`
+     table.innerHTML += row
+
+   }
+}
+ 
+
+</script>
+</body>
+</html>
