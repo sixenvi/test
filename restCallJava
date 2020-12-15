@@ -1,0 +1,35 @@
+public static void main(String[] args) throws IOException {
+        try {
+            String url = "https://confluencedemo42.atlasteam.de/rest/api/space/";
+            URL obj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+            connection.setRequestMethod("GET");
+            int responseCode = connection.getResponseCode();
+            System.out.println("Sending 'GET' request to : " + url);
+            System.out.println("Response Code" + responseCode);
+
+            if (responseCode != 200) {
+                throw new RuntimeException("HttpResponseCode: " + responseCode);
+            } else {
+
+                   String jsonArr = "";
+                   Scanner scanner = new Scanner(obj.openStream());
+                   while (scanner.hasNext()) {
+                   jsonArr += scanner.nextLine();
+                   }
+                     scanner.close();
+
+                System.out.println(jsonArr);
+                
+                //Parse the String into a Json object with Gson???
+               }
+               
+              }    
+           }       
+               catch(FileNotFoundException e){
+                    e.printStackTrace();
+                }
+
+
+            }
+        
