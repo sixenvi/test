@@ -13,23 +13,31 @@ public static void main(String[] args) throws IOException {
             } else {
 
                    String jsonArr = "";
-                   Scanner scanner = new Scanner(obj.openStream());
+                   Scanner scanner = new Scanner(connection.openStream());
                    while (scanner.hasNext()) {
                    jsonArr += scanner.nextLine();
                    }
                      scanner.close();
 
-                System.out.println(jsonArr);
-                
-                //Parse the String into a Json object with Gson???
-               }
-               
-              }    
-           }       
+                   JsonElement jsonElement;
+                   jsonElement = new JsonParser().parse(jsonArr.toString());
+                   JsonObject jsonObject = jsonElement.getAsJsonObject();
+                   JsonElement jsonArray= jsonObject.get("results");
+                   JsonArray resultsArr = jsonArray.getAsJsonArray();
+                   for(int i =0; i< resultsArr.size(); i++) {
+                       JsonElement results = resultsArr.get(i);
+                       JsonObject jsonObject2 = results.getAsJsonObject();
+                       JsonElement links = jsonObject2.get("_links");
+                       JsonObject jsonObject3 = links.getAsJsonObject();
+                       System.out.println("Name: "+ jsonObject2.get("name") +" Key: "+ jsonObject2.get("key")+ " Link: "
+                       + jsonObject3.get("self")); 
+                       }
+                   }
+              }   
                catch(FileNotFoundException e){
                     e.printStackTrace();
-                }
+                    }
 
-
-            }
+                 }
+        }
         
