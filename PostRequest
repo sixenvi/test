@@ -1,0 +1,42 @@
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+
+public class RequestPost {
+    public static void main(String[] args) throws IOException {
+     requestPost();
+    }
+    public static void requestPost() throws IOException {
+
+            String url = "https://confluencedemo42.atlasteam.de/rest/api/space/";
+            URL obj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+            connection.setRequestMethod("POST");
+            String auth = "lduarte" + ":" + "youCanDoIt";
+            byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes("utf-8"));
+            String authHeaderValue = "Basic " + new String(encodedAuth);
+            connection.setRequestProperty("Authorization",
+                authHeaderValue);
+            connection.setRequestProperty("Content-Type", "application/json; utf-8");
+            connection.setRequestProperty("Accept", "application/json");
+            connection.setDoOutput(true);
+            String jsonInputString = "{\"name\": \"Lucia\", \"key\": \"LUD\", \"type\": \"personal\",\"_links\": \"null\"}";
+            try (OutputStream os = connection.getOutputStream()) {
+                byte[] input = jsonInputString.getBytes("utf-8");
+                os.write(input, 0, input.length);		}
+
+            int code = connection.getResponseCode();
+            System.out.println(code);
+
+            try(BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"))){
+
+            StringBuilder response = new StringBuilder();
+            String responseLine = null;
+            while ((responseLine = br.readLine()) != null) {
+                response.append(responseLine.trim());
+            }
+            System.out.println(response.toString());
+    }
+}
+}
